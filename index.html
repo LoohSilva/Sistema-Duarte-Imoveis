@@ -1,0 +1,217 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Duarte Imóveis | Gestão</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="topo">
+    <div>
+      <p class="marca">DUARTE IMÓVEIS</p>
+      <h1>Painel de gestão</h1>
+      <p class="subtitulo">Imóveis, comissões e cobranças em um só lugar.</p>
+    </div>
+
+    <div class="mes-label">
+      <span>Mês de referência</span>
+      <strong>Novembro de 2026</strong>
+    </div>
+  </header>
+
+  <main class="container">
+
+    
+    <section class="painel-importacao">
+      <div>
+        <h2>Importar planilha</h2>
+        <p>Selecione o arquivo CSV para carregar os imóveis.</p>
+      </div>
+
+      <label class="botao arquivo">
+        Escolher CSV
+        <input type="file" id="arquivoCSV" accept=".csv,text/csv">
+      </label>
+
+      <span id="nomeArquivo" class="ajuda">
+        Nenhum arquivo selecionado
+      </span>
+    </section>
+
+    
+    <section class="resumo">
+
+      <article class="cartao">
+        <span>Comissões calculadas</span>
+        <strong id="totalCalculado">R$ 0,00</strong>
+        <small>Venda concluída e aluguéis do mês</small>
+      </article>
+
+      <article class="cartao">
+        <span>Previsão de venda</span>
+        <strong id="totalPrevisao">R$ 0,00</strong>
+        <small>Valores aguardando fechamento</small>
+      </article>
+
+      <article class="cartao">
+        <span>Comissão atrasada</span>
+        <strong id="totalAtrasado">R$ 0,00</strong>
+        <small>Aguardando pagamento do inquilino</small>
+      </article>
+
+      <article class="cartao">
+        <span>Imóveis cadastrados</span>
+        <strong id="totalImoveis">0</strong>
+        <small>Registros importados</small>
+      </article>
+
+    </section>
+
+    
+    <section class="secao">
+      <div class="titulo-secao">
+        <div>
+          <h2>Comissões de novembro</h2>
+          <p>Valores calculados conforme as regras da imobiliária.</p>
+        </div>
+      </div>
+
+      <div class="tabela-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Imóvel</th>
+              <th>Tipo</th>
+              <th>Cidade</th>
+              <th>Negócio</th>
+              <th>Base de cálculo</th>
+              <th>Comissão</th>
+              <th>Situação</th>
+            </tr>
+          </thead>
+
+          <tbody id="tabelaComissoes">
+            <tr>
+              <td colspan="7" class="vazio">
+                Importe um CSV para visualizar as comissões.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="secao">
+      <div class="titulo-secao">
+        <div>
+          <h2>Imóveis</h2>
+          <p>Consulte e filtre os imóveis cadastrados.</p>
+        </div>
+
+        <div class="filtros">
+          <input
+            type="search"
+            id="busca"
+            placeholder="Buscar imóvel"
+          >
+
+          <select id="filtroStatus">
+            <option value="">Todas as situações</option>
+          </select>
+
+          <select id="filtroCidade">
+            <option value="">Todas as cidades</option>
+          </select>
+        </div>
+      </div>
+
+      <select id="filtroMes"></select>
+
+
+<strong id="totalMes"></strong>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Mês</th><th>Calculado</th><th>Previsão</th><th>Atrasado</th><th>Total</th>
+    </tr>
+  </thead>
+  <tbody id="tabelaMeses"></tbody>
+</table>
+
+      <div class="tabela-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Código</th>
+              <th>Tipo</th>
+              <th>Cidade</th>
+              <th>Negócio</th>
+              <th>Valor</th>
+              <th>Situação</th>
+            </tr>
+          </thead>
+
+          <tbody id="tabelaImoveis">
+            <tr>
+              <td colspan="6" class="vazio">
+                Nenhum imóvel carregado.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  
+    <section class="secao">
+      <div class="titulo-secao">
+        <div>
+          <h2>Gestão de cobranças</h2>
+          <p>Acompanhe os pagamentos dos aluguéis.</p>
+        </div>
+      </div>
+
+      <div class="aviso">
+        A emissão dos boletos continua sendo feita diretamente pelo banco.
+        Este painel controla os valores e a situação dos pagamentos.
+      </div>
+
+      <div class="tabela-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Imóvel</th>
+              <th>Cidade</th>
+              <th>Valor do aluguel</th>
+              <th>Comissão</th>
+              <th>Pagamento</th>
+            </tr>
+          </thead>
+
+          <tbody id="tabelaCobrancas">
+            <tr>
+              <td colspan="5" class="vazio">
+                Importe um CSV para visualizar os aluguéis.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <footer>
+      <p>Protótipo de gestão interna da Duarte Imóveis.</p>
+      <p>Referência: novembro de 2026</p>
+    </footer>
+
+  </main>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
