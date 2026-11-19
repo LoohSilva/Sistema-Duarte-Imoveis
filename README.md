@@ -10,7 +10,7 @@ Como acessar
 
 Acesse o sistema pelo link:
 
-[INSIRA AQUI O LINK DO SISTEMA]
+https://sistemaduarteimoveis.netlify.app
 
 ## Vídeo de apresentação
 
